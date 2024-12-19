@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const kPrimaryColor = Color(0xffC11F20);
+  static const kPrimaryColor = Color(0xffF18701);
   static const kBlack = Colors.black;
   static const kWhite = Colors.white;
   static const kWhiteShade = Color(0xffF6F6F6);
@@ -12,6 +12,9 @@ class AppColors {
 // For images
 class AppImages {
   static const path = 'assets/images/';
+  static const onBoarding1 = '${path}gym_onboarding1.svg';
+  static const onBoarding2 = '${path}gym_onboarding2.svg';
+  static const onBoarding3 = '${path}gym_onboarding3.svg';
 }
 
 // For sizing
@@ -61,4 +64,14 @@ class AppSize {
   static const kWidth60 = SizedBox(
     width: 60,
   );
+}
+
+// Paddings
+class AppPaddings {
+  static const backgroundP = EdgeInsets.all(20);
+  static const bottomnavP = EdgeInsets.symmetric(
+    horizontal: 30,
+    vertical: 40,
+  );
+  static const buttonPadding = EdgeInsets.all(12);
 }

@@ -101,7 +101,7 @@ class CustomTextFormField extends StatelessWidget {
                       Text(
                         text ?? '',
                         style: TextStyle(
-                          color: AppColors.kWhite.withOpacity(0.3),
+                          color: AppColors.kWhite.withAlpha((0.3 * 255).round()),
                         ),
                       )
                   : null,

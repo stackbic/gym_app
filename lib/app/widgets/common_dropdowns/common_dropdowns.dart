@@ -42,7 +42,7 @@ class CommonDropDownWidget extends StatelessWidget {
                 borderRadius: BorderRadius.circular(radius ?? 15),
                 color: AppColors.kWhite,
                 border: Border.all(
-                  color: AppColors.kBlack.withOpacity(0.2),
+                  color: AppColors.kBlack.withAlpha((0.2 * 255).round()),
                 ),
               ),
               child: Row(
@@ -55,14 +55,16 @@ class CommonDropDownWidget extends StatelessWidget {
                       primaryValue,
                       style: TextStyle(
                         fontSize: 16,
-                        color: primaryValue == hintText ? AppColors.kBlack.withOpacity(0.3) : AppColors.kBlack,
+                        color: primaryValue == hintText
+                            ? AppColors.kBlack.withAlpha((0.3 * 255).round())
+                            : AppColors.kBlack,
                       ),
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
                   Icon(
                     Icons.arrow_drop_down,
-                    color: isDropIconColor ?? AppColors.kBlack.withOpacity(0.76),
+                    color: isDropIconColor ?? AppColors.kBlack.withAlpha((0.76 * 255).round()),
                     size: 18,
                   ),
                 ],

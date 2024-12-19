@@ -37,7 +37,7 @@ void showCustomDialog(
               },
               child: CircleAvatar(
                 radius: 15,
-                backgroundColor: AppColors.kBlack.withOpacity(0.6),
+                backgroundColor: AppColors.kBlack.withAlpha((0.6 * 255).round()),
                 child: const Icon(
                   CupertinoIcons.clear,
                   color: AppColors.kWhite,

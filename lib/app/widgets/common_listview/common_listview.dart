@@ -79,7 +79,7 @@ class CommonListTile extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(borderRadius ?? 15),
         side: BorderSide(
-          color: borderColor ?? AppColors.kBlack.withOpacity(0.1),
+          color: borderColor ?? AppColors.kBlack.withAlpha((0.1 * 255).round()),
         ),
       ),
       child: ListTile(
@@ -90,7 +90,7 @@ class CommonListTile extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(borderRadius ?? 15),
           side: BorderSide(
-            color: borderColor ?? AppColors.kBlack.withOpacity(0.1),
+            color: borderColor ?? AppColors.kBlack.withAlpha((0.1 * 255).round()),
           ),
         ),
         contentPadding: contentPadding ?? const EdgeInsets.symmetric(horizontal: 5, vertical: 0),
@@ -102,7 +102,7 @@ class CommonListTile extends StatelessWidget {
               style: titleStyle ??
                   TextStyle(
                     fontSize: 14,
-                    color: AppColors.kBlack.withOpacity(0.4),
+                    color: AppColors.kBlack.withAlpha((0.4 * 255).round()),
                   ),
             ),
         subtitle: isSubtitle
