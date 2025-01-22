@@ -40,11 +40,17 @@ dependencies:
   dropdown_button2: ^2.3.9
   flutter_svg: ^2.0.16
   smooth_page_indicator: ^1.2.0+3
+  flutter_launcher_icons: ^0.14.3
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/Intainor_logo.png"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

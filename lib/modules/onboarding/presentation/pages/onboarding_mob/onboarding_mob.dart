@@ -4,7 +4,6 @@ import 'package:gym_app/app/config/app_constants.dart';
 import 'package:gym_app/app/widgets/appbar/appbar.dart';
 import 'package:gym_app/config/riverpod_providers.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-
 import '../../../../../app/widgets/common_buttons_textforms/button_textforms.dart';
 import 'onboard_container.dart';
 
@@ -24,6 +23,9 @@ class _OnboardingMobState extends State<OnboardingMob> {
       builder: (context, ref, child) {
         final onBoardingState = ref.watch(RiverpodProviders.onBoardingProvider);
         final onBoardingController = ref.read(RiverpodProviders.onBoardingProvider.notifier);
+        final themeController = ref.watch(RiverpodProviders.themeProvider.notifier);
+        final themeState = ref.watch(RiverpodProviders.themeProvider);
+
         final PageController pageController = PageController(
           initialPage: onBoardingState.currentPage,
         );
@@ -36,6 +38,13 @@ class _OnboardingMobState extends State<OnboardingMob> {
         });
         return Scaffold(
           appBar: CommonAppBar(
+            titleWidget: CommonToggleButton(
+              value: false,
+              isYesNo: false,
+              onChanged: (p0) {
+                themeController.toggleTheme();
+              },
+            ),
             actions: [
               if (onBoardingController.shouldShowSkipButton())
                 Padding(
@@ -59,21 +68,19 @@ class _OnboardingMobState extends State<OnboardingMob> {
             ],
           ),
           body: SafeArea(
-            child: Padding(
-              padding: AppPaddings.backgroundP,
-              child: PageView.builder(
-                controller: pageController,
-                itemCount: onBoardingState.onBoardTotalPage,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) {
-                  return OnboardContainer(
-                    screenIndex: index,
-                  );
-                },
-              ),
+            child: PageView.builder(
+              controller: pageController,
+              itemCount: onBoardingState.onBoardTotalPage,
+              scrollDirection: Axis.horizontal,
+              itemBuilder: (context, index) {
+                return OnboardContainer(
+                  screenIndex: index,
+                  themeState: themeState,
+                );
+              },
             ),
           ),
-          bottomNavigationBar: Padding(
+          bottomNavigationBar: Container(
             padding: AppPaddings.bottomnavP,
             child: Column(
               spacing: 20,
@@ -102,16 +109,7 @@ class _OnboardingMobState extends State<OnboardingMob> {
                     backgroundColor: const WidgetStatePropertyAll(AppColors.kPrimaryColor),
                     borderRadius: BorderRadius.circular(15),
                     onPressed: () {
-                      final nextPage = pageController.page!.toInt() + 1;
-                      if (nextPage < 3) {
-                        pageController.animateToPage(
-                          nextPage,
-                          duration: const Duration(milliseconds: 500),
-                          curve: Curves.easeInOut,
-                        );
-                      } else {
-                        // Handle navigation to the next screen or onboarding finish
-                      }
+                      onBoardingController.onNavigateAuth(context, controller: pageController);
                     },
                   ),
                 ),

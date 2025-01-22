@@ -6,56 +6,59 @@ class OnboardContainer extends StatelessWidget {
   const OnboardContainer({
     super.key,
     required this.screenIndex,
+    required this.themeState,
   });
   final int screenIndex;
-
+  final ThemeData themeState;
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      spacing: 10,
       children: [
-        Visibility(
-          visible: screenIndex == 0,
-          child: AppSize.kHeight5,
-        ),
-        SizedBox(
-          width: double.infinity,
-          height: 300,
+        Expanded(
+          flex: 5,
           child: SvgPicture.asset(
             screenIndex == 0
                 ? AppImages.onBoarding1
                 : screenIndex == 1
                     ? AppImages.onBoarding2
                     : AppImages.onBoarding3,
-            fit: BoxFit.contain,
+            fit: BoxFit.fitWidth,
           ),
         ),
-        screenIndex == 2 ? AppSize.kHeight40 : AppSize.kHeight15,
-        Text(
-          screenIndex == 0
-              ? "Welcome to Your Gym Companion."
-              : screenIndex == 1
-                  ? 'Built for Everyone, Designed for Success'
-                  : 'Ready to Transform? Let’s Begin!',
-          style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
-        ),
-        Text(
-          screenIndex == 0
-              ? "Manage, train, achieve all in one. For gym owners, trainers,  & athletes ready to elevate their fitness journey"
-              : screenIndex == 1
-                  ? 'Effortlessly manage members, customize workouts, and track progress. '
-                  : 'Get the tools, insights, and support you need to reach new heights. Start your fitness journey today!',
-          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                fontSize: 16,
-              ),
-        ),
-        Visibility(
-          visible: screenIndex == 1 || screenIndex == 2,
-          child: AppSize.kHeight20,
+        Expanded(
+          flex: 2,
+          child: Padding(
+            padding: const EdgeInsets.only(
+              left: 30,
+              right: 10,
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  screenIndex == 0
+                      ? "Welcome to Your Gym Companion."
+                      : screenIndex == 1
+                          ? 'Built for Everyone, Designed for Success'
+                          : 'Ready to Transform? Let’s Begin!',
+                  style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
+                ),
+                AppSize.kHeight10,
+                Text(
+                  screenIndex == 0
+                      ? "Manage, train, achieve all in one. For gym owners, trainers,  & athletes ready to elevate their fitness journey"
+                      : screenIndex == 1
+                          ? 'Effortlessly manage members, customize workouts, and track progress. '
+                          : 'Get the tools, insights, and support you need to reach new heights. Start your fitness journey today!',
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                        fontSize: 17,
+                      ),
+                ),
+              ],
+            ),
+          ),
         ),
       ],
     );

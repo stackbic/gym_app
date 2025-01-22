@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         builder: (context, ref, child) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
-            title: 'Gym App',
+            title: 'Intrainor',
             theme: ref.watch(RiverpodProviders.themeProvider),
             initialRoute: AppRouterConstants.splashRoute,
             onGenerateRoute: AppRouter.generateRoute,

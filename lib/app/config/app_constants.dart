@@ -64,6 +64,9 @@ class AppSize {
   static const kWidth60 = SizedBox(
     width: 60,
   );
+
+  // Icon Size
+  static const double appIconSize = 24;
 }
 
 // Paddings
@@ -74,4 +77,5 @@ class AppPaddings {
     vertical: 40,
   );
   static const buttonPadding = EdgeInsets.all(12);
+  static const textFormPadding = EdgeInsets.symmetric(vertical: 15, horizontal: 20);
 }
