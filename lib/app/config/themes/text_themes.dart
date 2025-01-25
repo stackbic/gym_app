@@ -1,66 +1,68 @@
-// app_text_theme.dart
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:gym_app/app/config/app_constants.dart';
 
 class AppTextTheme {
   static TextTheme lightTextTheme = _buildTextTheme(AppColors.kBlack);
   static TextTheme darkTextTheme = _buildTextTheme(AppColors.kWhite);
 
-  /// Base TextTheme Builder
   static TextTheme _buildTextTheme(Color color) {
     return TextTheme(
-      displayLarge: GoogleFonts.poppins(
+      displayLarge: TextStyle(
+        fontFamily: 'Poppins',
         fontSize: 32,
         fontWeight: FontWeight.bold,
         color: color,
       ),
-      displayMedium: GoogleFonts.poppins(
+      displayMedium: TextStyle(
+        fontFamily: 'Poppins',
         fontSize: 28,
         fontWeight: FontWeight.bold,
         color: color,
       ),
-      displaySmall: GoogleFonts.poppins(
+      displaySmall: TextStyle(
+        fontFamily: 'Poppins',
         fontSize: 24,
         fontWeight: FontWeight.w600,
         color: color,
       ),
-      headlineMedium: GoogleFonts.poppins(
+      headlineMedium: TextStyle(
+        fontFamily: 'Poppins',
         fontSize: 20,
         fontWeight: FontWeight.w600,
         color: color,
       ),
-      headlineSmall: GoogleFonts.poppins(
+      headlineSmall: TextStyle(
+        fontFamily: 'Poppins',
         fontSize: 18,
         fontWeight: FontWeight.w500,
         color: color,
       ),
-      titleLarge: GoogleFonts.poppins(
+      titleLarge: TextStyle(
+        fontFamily: 'Poppins',
         fontSize: 16,
         fontWeight: FontWeight.w500,
         color: color,
       ),
-      titleMedium: GoogleFonts.poppins(
+      bodyLarge: TextStyle(
+        fontFamily: 'Poppins',
         fontSize: 14,
         fontWeight: FontWeight.w400,
         color: color,
       ),
-      bodyLarge: GoogleFonts.poppins(
-        fontSize: 14,
-        fontWeight: FontWeight.w400,
-        color: color,
-      ),
-      bodyMedium: GoogleFonts.poppins(
+      bodyMedium: TextStyle(
+        fontFamily: 'Poppins',
         fontSize: 12,
         fontWeight: FontWeight.w400,
         color: color,
       ),
-      labelLarge: GoogleFonts.poppins(
+      labelLarge: TextStyle(
+        fontFamily: 'Poppins',
         fontSize: 12,
         fontWeight: FontWeight.w500,
         color: color,
       ),
-      labelSmall: GoogleFonts.poppins(
+      labelSmall: TextStyle(
+        fontFamily: 'Poppins',
         fontSize: 10,
         fontWeight: FontWeight.w400,
         color: color,

@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gym_app/app/config/themes/themes.dart';
 
 class ThemeNotifier extends StateNotifier<ThemeData> {
-  ThemeNotifier() : super(AppThemes.lightTheme);
+  ThemeNotifier() : super(AppThemes.darkTheme);
 
   void toggleTheme() {
     if (state == AppThemes.lightTheme) {

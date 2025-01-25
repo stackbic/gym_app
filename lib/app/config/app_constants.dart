@@ -12,9 +12,7 @@ class AppColors {
 // For images
 class AppImages {
   static const path = 'assets/images/';
-  static const onBoarding1 = '${path}gym_onboarding1.svg';
-  static const onBoarding2 = '${path}gym_onboarding2.svg';
-  static const onBoarding3 = '${path}gym_onboarding3.svg';
+  static const onBoarding = '${path}gym_onboarding.svg';
 }
 
 // For sizing
@@ -73,7 +71,7 @@ class AppSize {
 class AppPaddings {
   static const backgroundP = EdgeInsets.all(20);
   static const bottomnavP = EdgeInsets.symmetric(
-    horizontal: 30,
+    horizontal: 20,
     vertical: 40,
   );
   static const buttonPadding = EdgeInsets.all(12);

@@ -1,22 +1,19 @@
-class OnboardingMobState {
+class OnboardingEntity {
   final bool isLoading;
   final int onBoardTotalPage;
-  final int currentPage;
-  OnboardingMobState({
+  OnboardingEntity({
     this.isLoading = false,
     this.onBoardTotalPage = 3,
-    this.currentPage = 0,
   });
 
-  OnboardingMobState copyWith({
+  OnboardingEntity copyWith({
     bool? isLoading,
     int? onBoardTotalPage,
     int? currentPage,
   }) {
-    return OnboardingMobState(
+    return OnboardingEntity(
       isLoading: isLoading ?? this.isLoading,
       onBoardTotalPage: onBoardTotalPage ?? this.onBoardTotalPage,
-      currentPage: currentPage ?? this.currentPage,
     );
   }
 }

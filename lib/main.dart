@@ -5,6 +5,7 @@ import 'package:gym_app/app/router/router_constants.dart';
 import 'package:gym_app/config/riverpod_providers.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
