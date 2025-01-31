@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gym_app/app/router/router_constants.dart';
-import 'package:gym_app/modules/auth/presentation/pages/auth_mob/auth_mob.dart';
+import 'package:gym_app/modules/auth/presentation/pages/auth.dart';
+import 'package:gym_app/modules/home/presentation/pages/home.dart';
 import 'package:gym_app/modules/splash/splash.dart';
-
 import '../../modules/onboarding/presentation/pages/onboarding.dart';
 
 class AppRouter {
@@ -18,7 +18,11 @@ class AppRouter {
         );
       case AppRouterConstants.authRoute:
         return MaterialPageRoute(
-          builder: (_) => const AuthMob(),
+          builder: (_) => const AuthScreen(),
+        );
+      case AppRouterConstants.homeRoute:
+        return MaterialPageRoute(
+          builder: (_) => const HomeScreen(),
         );
       default:
         return MaterialPageRoute(

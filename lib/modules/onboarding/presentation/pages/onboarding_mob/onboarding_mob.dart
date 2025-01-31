@@ -29,7 +29,7 @@ class _OnboardingEntity extends State<OnboardingMob> {
               child: OnboardContainer(
             themeState: themeState,
           )),
-          bottomNavigationBar: FadeInLeft(
+          bottomNavigationBar: FadeInUp(
             child: Container(
               padding: AppPaddings.bottomnavP,
               color: AppColors.kWhite.withValues(
@@ -42,7 +42,7 @@ class _OnboardingEntity extends State<OnboardingMob> {
                       color: AppColors.kWhite,
                     ),
                 backgroundColor: const WidgetStatePropertyAll(AppColors.kPrimaryColor),
-                borderRadius: BorderRadius.circular(15),
+                borderRadius: BorderRadius.circular(12),
                 onPressed: () {
                   onBoardingController.onNavigateAuth(context);
                 },

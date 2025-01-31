@@ -13,6 +13,8 @@ class AppColors {
 class AppImages {
   static const path = 'assets/images/';
   static const onBoarding = '${path}gym_onboarding.svg';
+  static const intrainorLogo = '${path}Intrainor.png';
+  static const intrainorBanner = '${path}intrainor_banner.png';
 }
 
 // For sizing
@@ -74,6 +76,6 @@ class AppPaddings {
     horizontal: 20,
     vertical: 40,
   );
-  static const buttonPadding = EdgeInsets.all(12);
+  static const buttonPadding = EdgeInsets.all(14);
   static const textFormPadding = EdgeInsets.symmetric(vertical: 15, horizontal: 20);
 }

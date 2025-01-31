@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gym_app/app/config/app_constants.dart';
+import 'package:gym_app/app/config/themes/themes.dart';
 
 class CommonContainerWithBorder extends StatelessWidget {
   const CommonContainerWithBorder({
@@ -23,7 +24,7 @@ class CommonContainerWithBorder extends StatelessWidget {
       padding: padding ?? const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
       decoration: BoxDecoration(
         borderRadius: borderRadius ?? BorderRadius.circular(radius ?? 10),
-        color: color ?? AppColors.kWhite,
+        color: color ?? (AppThemes == AppThemes.lightTheme ? AppColors.kWhite : AppColors.kBlackSecondary),
         border: Border.all(
           color: borderColor ?? AppColors.kBlack.withAlpha((0.1 * 255).round()),
         ),
